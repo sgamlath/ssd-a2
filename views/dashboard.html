@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{title}}</title>
+</head>
+<body>
+    <div>
+        Hi, {{name}}. Welcome to file uploader. Please select a file and it will be uploaded to your google drive.
+        <br>
+        Your email is {{email}}. Click <a href="/auth/logout">here</a> to logout.
+        <br>
+    </div>
+    <div>
+        <br>
+        <br>
+        <h4>File Uploader</h4>
+        <form style="padding: 10px;" action="/upload" method="post" enctype="multipart/form-data">
+            <div>
+                <span>File</span>
+                <input style="padding: 10px;" type="file" required name="file_upload">
+            </div>
+            <button style="padding: 10px;" type="submit">UPLOAD</button>
+        </form>
+        <div>
+            {% if (file == "uploaded") %}
+            <div class="light-blue lighten-1" style="padding: 2px 10px; background-color: lightgreen; max-width: fit-content;">
+                <p>File successfully uploaded</p>
+            </div>
+            {% elif (file == "notuploaded") %}
+            <div class="light-blue lighten-1" style="padding: 2px 10px; background-color: lightcoral; max-width: fit-content;">
+                <p>Failed to upload file. Try again.</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
