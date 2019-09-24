@@ -15,4 +15,4 @@ $ npm run prod
 ```
 
 ### Run
-Web app will run on port 4000: [SSD-A2](http://localhost:4000)
+Web app will run on localhost:4000 : [SSD-A2](http://localhost:4000)
